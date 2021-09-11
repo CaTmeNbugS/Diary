@@ -10,7 +10,7 @@
   height: 1080px;
   display: grid;
   justify-content: center;
-  background: #f0f8ff;
+  background: #ffe4c4;
 }
 diary {
   width: 425px;
@@ -21,7 +21,7 @@ diary {
   justify-content: center;
 }
 .WeekContainer {
-  background: #f0f8ff;
+  background: #ffe4c4;
   height: 100%;
   position: fixed;
   width: inherit;
@@ -30,7 +30,7 @@ diary {
   margin-top: 60px;
   position: absolute;
   width: inherit;
-  background: #f0f8ff;
+  background: #ffe4c4;
   display: grid;
   justify-items: center;
 }
