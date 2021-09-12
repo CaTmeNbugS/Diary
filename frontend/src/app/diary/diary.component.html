@@ -35,99 +35,25 @@
 </div>
 <div class="DiaryContainer">
   <!-- -1- -->
-  <div class="DiaryBox">
+  <div *ngFor="let diary of Diary" class="DiaryBox">
     <div class="DayBox">
-      <span style="font-size: 25px; font-family: 'Inter'">Понедельник</span>
-      <span style="margin-left: 6px; font-size: 14px">13.09</span>
+      <span style="font-size: 25px; font-family: 'Inter'">{{
+        diary.Date.Day
+      }}</span>
+      <span style="margin-left: 6px; font-size: 14px">{{
+        diary.Date.Date
+      }}</span>
     </div>
     <div class="Diary">
-      <div class="DiaryTable">
+      <div
+        *ngFor="let DiaryTable of diary.Syllabus; let i = index"
+        class="DiaryTable"
+      >
         <div class="DiaryNumber">
-          <span>1</span>
+          <span>{{ i + 1 }}</span>
         </div>
         <div class="DiarySubject">
-          <span>Математика</span>
-        </div>
-      </div>
-      <div class="DiaryTable">
-        <div class="DiaryNumber">
-          <span>2</span>
-        </div>
-        <div class="DiarySubject">
-          <span>Русский</span>
-        </div>
-      </div>
-      <div class="DiaryTable">
-        <div class="DiaryNumber">
-          <span>3</span>
-        </div>
-        <div class="DiarySubject">
-          <span>Химия</span>
-        </div>
-      </div>
-      <div class="DiaryTable">
-        <div class="DiaryNumber">
-          <span>4</span>
-        </div>
-        <div class="DiarySubject">
-          <span>История</span>
-        </div>
-      </div>
-      <div class="DiaryTable">
-        <div class="DiaryNumber">
-          <span>5</span>
-        </div>
-        <div class="DiarySubject">
-          <span>Физика</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- -2- -->
-  <div class="DiaryBox">
-    <div class="DayBox">
-      <span style="font-size: 25px; font-family: 'Inter'">Вторник</span>
-      <span style="margin-left: 6px; font-size: 14px">14.09</span>
-    </div>
-    <div class="Diary">
-      <div class="DiaryTable">
-        <div class="DiaryNumber">
-          <span>1</span>
-        </div>
-        <div class="DiarySubject">
-          <span>Математика</span>
-        </div>
-      </div>
-      <div class="DiaryTable">
-        <div class="DiaryNumber">
-          <span>2</span>
-        </div>
-        <div class="DiarySubject">
-          <span>Русский</span>
-        </div>
-      </div>
-      <div class="DiaryTable">
-        <div class="DiaryNumber">
-          <span>3</span>
-        </div>
-        <div class="DiarySubject">
-          <span>Химия</span>
-        </div>
-      </div>
-      <div class="DiaryTable">
-        <div class="DiaryNumber">
-          <span>4</span>
-        </div>
-        <div class="DiarySubject">
-          <span>История</span>
-        </div>
-      </div>
-      <div class="DiaryTable">
-        <div class="DiaryNumber">
-          <span>5</span>
-        </div>
-        <div class="DiarySubject">
-          <span>Физика</span>
+          <span>{{ DiaryTable.Name }}</span>
         </div>
       </div>
     </div>
