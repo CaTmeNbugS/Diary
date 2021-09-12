@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-syllabus',
+  selector: 'syllabus',
   templateUrl: './syllabus.component.html',
-  styleUrls: ['./syllabus.component.css']
+  styleUrls: ['./syllabus.component.css'],
 })
 export class SyllabusComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
