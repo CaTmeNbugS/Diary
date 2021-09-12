@@ -12,8 +12,12 @@
   justify-content: center;
   background: #ffe4c4;
 }
-diary {
+main {
+  position: relative;
   width: 425px;
+}
+diary {
+  width: inherit;
 }
 .WeekBox {
   padding: 10px;
@@ -91,7 +95,6 @@ diary {
 }
 .NavbarLink {
   display: grid;
-  width: 25%;
   place-items: center;
   margin: 6px 0px;
 }
@@ -101,4 +104,9 @@ diary {
 .NavbarLink > span {
   font-family: "Inter";
   font-size: 14px;
+}
+a {
+  width: 25%;
+  text-decoration: none;
+  color: black;
 }
