@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { RippleEffect } from './scripts';
 import { slider } from './route-animations';
 
 @Component({
@@ -10,16 +9,13 @@ import { slider } from './route-animations';
   animations: [slider],
 })
 export class AppComponent implements OnInit {
+  WindowWidth = window.innerWidth;
+  WindowHeight = window.innerHeight;
   ngOnInit() {
-    const root = document.documentElement.style;
-    root.setProperty('--ClientHeight', window.innerHeight + 'px');
-    root.setProperty('--ClientWidth', window.innerWidth + 'px');
-    window.onresize = function () {
-      root.setProperty('--ClientWidth', window.innerWidth + 'px');
-      root.setProperty('--ClientHeight', window.innerHeight + 'px');
-    };
-    const click = document.querySelectorAll('.click');
-    RippleEffect(click);
+    const Navbar = document.querySelector<HTMLElement>('.NavbarContainer');
+    Navbar.style.maxWidth = JSON.stringify(this.WindowWidth) + 'px';
+    Navbar.style.top =
+      JSON.stringify(this.WindowHeight - Navbar.offsetHeight) + 'px';
   }
   PrepareRoute(outlet: RouterOutlet) {
     return (

@@ -1,0 +1,70 @@
+.DiaryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+}
+.DiaryBox {
+  background: #000814;
+  width: 95%;
+  margin: 10px 0px;
+  border-radius: 10px;
+  color: whitesmoke;
+  max-width: 420px;
+}
+.Diary {
+  padding: 15px;
+}
+.DiaryTable {
+  padding: 5px;
+  border-radius: 5px;
+  margin: 4px 0px;
+  height: 32px;
+  transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.DayBox {
+  padding: 15px 20px;
+  border-bottom: 3px solid #ffc300;
+}
+.DiaryNumber {
+  background: #141b26;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.DiarySubject {
+  margin-left: 10px;
+}
+.DiaryTableHeader {
+  display: flex;
+  align-items: center;
+}
+.Extended {
+  background: #141b26;
+  height: 150px;
+}
+.DiaryTable > .DiaryTableInfo {
+  opacity: 0;
+  visibility: hidden;
+  margin: 15px 0px;
+  transition: 0.2s;
+}
+.DiaryTable.Extended > .DiaryTableInfo {
+  opacity: 1;
+  margin: 0px;
+  visibility: visible;
+}
+.Homework {
+  border-radius: 5px;
+  width: -webkit-fill-available;
+  outline: none;
+  background: #000814;
+  color: whitesmoke;
+  font-family: "Ruda";
+  padding: 15px;
+  margin: 5px;
+  overflow: hidden;
+  border: 2px solid #000814;
+  transition: 0.3s;
+}
+.Homework:focus {
+  border: 2px solid #ffc300;
+}
