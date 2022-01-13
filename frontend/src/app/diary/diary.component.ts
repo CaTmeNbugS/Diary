@@ -194,27 +194,33 @@ export class DiaryComponent implements OnInit, AfterViewInit {
   ngOnInit() {}
   ngAfterViewInit() {
     const DiaryTable = document.querySelectorAll<HTMLElement>('.DiaryTable');
-    const DiaryTableHomework = document.querySelector<HTMLElement>(
-      '.DiaryTableHomework'
-    );
+    const WeekChanger = document.querySelector<HTMLElement>('.WeekChangerContainer');
+    const Content = document.querySelector<HTMLElement>('.ContentFixer');
+    const Navbar = document.querySelector<HTMLElement>('.NavbarContainer');
+    const DiaryTableHeader = document.querySelectorAll<HTMLElement>('.DiaryTableHeader');
+    this.SetHeight(WeekChanger, Content, Navbar);
+    this.Extend(DiaryTable, DiaryTableHeader );
+  }
+  Extend(DiaryTable, DiaryTableHeader){
     for (let i = 0; i < DiaryTable.length; i++) {
-      DiaryTable[i].addEventListener('click', (event) => {
-        if (event.target != DiaryTableHomework.firstChild) {
-          console.log(event.target);
-          DiaryTable[i].classList.add('Extended');
-          this.ExtendedTables.unshift(DiaryTable[i]);
-          if (this.ExtendedTables.length > 1) {
-            if (this.ExtendedTables[0] == this.ExtendedTables[1]) {
-              this.ExtendedTables[1].classList.remove('Extended');
-              this.ExtendedTables = [];
-            } else {
-              this.ExtendedTables[1].classList.remove('Extended');
-              this.ExtendedTables.splice(1, 1);
-            }
+      DiaryTableHeader[i].addEventListener('click', () => {
+        DiaryTable[i].classList.add('Extended');
+        this.ExtendedTables.unshift(DiaryTable[i]);
+        if (this.ExtendedTables.length > 1) {
+          if (this.ExtendedTables[0] == this.ExtendedTables[1]) {
+            this.ExtendedTables[1].classList.remove('Extended');
+            this.ExtendedTables = [];
+          } else {
+            this.ExtendedTables[1].classList.remove('Extended');
+            this.ExtendedTables.splice(1, 1);
           }
-          console.log(this.ExtendedTables);
         }
+        console.log(this.ExtendedTables);
       });
     }
+  }
+  SetHeight(Top, Content, Bottom) {
+    Content.style.height = window.innerHeight - (Top.offsetHeight + Bottom.offsetHeight / 2) + 'px';
+    console.log(Top, Content, Bottom);
   }
 }

@@ -1,40 +1,67 @@
-<div class="DiaryContainer">
-  <div *ngFor="let diary of Diary" class="DiaryBox">
-    <div class="DayBox">
-      <span style="font-size: 25px; font-family: 'Ruda'">{{
-        diary.Date.Day
-      }}</span>
-      <span style="margin-left: 6px; font-size: 14px">{{
-        diary.Date.Date
-      }}</span>
-    </div>
-    <div class="Diary">
-      <div
-        *ngFor="let DiaryTable of diary.Syllabus; let i = index"
-        class="DiaryTable"
-      >
-        <div class="DiaryTableHeader">
-          <div class="DiaryNumber">
-            <span>{{ i + 1 }}</span>
+<div class="WeekChangerContainer">
+  <div class="WeekChanger">
+    <svg
+      style="transform: rotate(180deg)"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+      />
+    </svg>
+  </div>
+  <div class="CurrentWeek">
+    <h2>10 - 16 января</h2>
+  </div>
+  <div class="WeekChanger">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+      <path
+        fill-rule="evenodd"
+        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+      />
+    </svg>
+  </div>
+</div>
+<div class="ContentFixer">
+  <div class="DiaryContainer">
+    <div *ngFor="let diary of Diary" class="DiaryBox">
+      <div class="DayBox">
+        <span style="font-size: 25px; font-family: 'Ruda'">{{
+          diary.Date.Day
+        }}</span>
+        <span style="margin-left: 6px; font-size: 14px">{{
+          diary.Date.Date
+        }}</span>
+      </div>
+      <div class="Diary">
+        <div
+          *ngFor="let DiaryTable of diary.Syllabus; let i = index"
+          class="DiaryTable"
+        >
+          <div class="DiaryTableHeader">
+            <div class="DiaryNumber">
+              <span>{{ i + 1 }}</span>
+            </div>
+            <div class="DiarySubject">
+              <span>{{ DiaryTable.Name }}</span>
+            </div>
           </div>
-          <div class="DiarySubject">
-            <span>{{ DiaryTable.Name }}</span>
-          </div>
-        </div>
-        <div class="DiaryTableInfo">
-          <div class="DiaryTableHomework">
-            <input
-              class="Homework"
-              type="text"
-              value="{{ DiaryTable.Homework }}"
-            />
-            <!-- <div class="DiaryTableInfo">
-              <span>Инфо:</span>
-              <div class="InfoBlock">
-                <span>Учитель </span>
-                <span>{{ DiaryTable.Info.Teacher }}</span>
-              </div>
-            </div> -->
+          <div class="DiaryTableInfo">
+            <div class="DiaryTableHomework">
+              <input
+                class="Homework"
+                type="text"
+                value="{{ DiaryTable.Homework }}"
+              />
+              <!-- <div class="DiaryTableInfo">
+                <span>Инфо:</span>
+                <div class="InfoBlock">
+                  <span>Учитель </span>
+                  <span>{{ DiaryTable.Info.Teacher }}</span>
+                </div>
+              </div> -->
+            </div>
           </div>
         </div>
       </div>

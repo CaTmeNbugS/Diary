@@ -12,10 +12,14 @@ export class AppComponent implements OnInit {
   WindowWidth = window.innerWidth;
   WindowHeight = window.innerHeight;
   ngOnInit() {
+    this.SetPosition();
+    window.onresize = this.SetPosition;
+  }
+  SetPosition() {
     const Navbar = document.querySelector<HTMLElement>('.NavbarContainer');
-    Navbar.style.maxWidth = JSON.stringify(this.WindowWidth) + 'px';
+    Navbar.style.maxWidth = JSON.stringify(window.innerWidth) + 'px';
     Navbar.style.top =
-      JSON.stringify(this.WindowHeight - Navbar.offsetHeight) + 'px';
+      JSON.stringify(window.innerHeight - Navbar.offsetHeight) + 'px';
   }
   PrepareRoute(outlet: RouterOutlet) {
     return (

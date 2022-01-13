@@ -6,9 +6,9 @@
   text-decoration: none;
 }
 body {
-  background: #001d3d;
+  background: #181818;
 }
-:-webkit-scrollbar:horizontal {
+*::-webkit-scrollbar {
   height: 0px !important;
   display: none !important;
   background: black;
@@ -20,10 +20,9 @@ main {
   position: fixed;
   height: 60px;
   width: 100%;
-  background: #000814;
+  background: #181818;
   bottom: 0px;
   left: 0px;
-  border-top: 2px solid #ffc300;
 }
 .Navbar {
   display: flex;
@@ -39,7 +38,8 @@ main {
   font-size: 13px;
 }
 .Icon {
-  height: 32px;
-  width: 32px;
-  background-image: url(./assets/1x/cogwheel-1.png);
+  height: 24px;
+  width: 24px;
+  fill: white;
+  margin-bottom: 2px;
 }
